@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<drjava version="drjava-20190813-220051">
+  <project autorefresh="false" root="" work="">
+    <createjar file=""/>
+    <source>
+      <file active="true" name="TCMBCurrency.java" package="" timestamp="04-Mar-2020 11:53:45">
+        <select from="209" to="209"/>
+        <scroll column="0" row="0"/>
+      </file>
+      <file name="TestAll.java" package="" timestamp="04-Mar-2020 09:03:41">
+        <select from="209" to="209"/>
+        <scroll column="0" row="0"/>
+      </file>
+      <file name="TestMySimpleURLReader.java" package="" timestamp="04-Mar-2020 10:13:04">
+        <select from="209" to="209"/>
+        <scroll column="0" row="0"/>
+      </file>
+      <file name="XHTMLFilteredReader.java" package="" timestamp="04-Mar-2020 10:14:02">
+        <select from="209" to="209"/>
+        <scroll column="0" row="0"/>
+      </file>
+      <file name="TestSimpleURLReader.java" package="" timestamp="04-Mar-2020 12:02:33">
+        <select from="209" to="209"/>
+        <scroll column="0" row="0"/>
+      </file>
+      <file name="MySimpleURLReader.java" package="" timestamp="04-Mar-2020 12:04:16">
+        <select from="209" to="209"/>
+        <scroll column="0" row="0"/>
+      </file>
+      <file name="HTMLFilteredReader.java" package="" timestamp="04-Mar-2020 12:09:39">
+        <select from="209" to="209"/>
+        <scroll column="0" row="0"/>
+      </file>
+      <file name="TestHTMLFilteredReader.java" package="" timestamp="04-Mar-2020 12:09:39">
+        <select from="209" to="209"/>
+        <scroll column="0" row="0"/>
+      </file>
+    </source>
+    <included/>
+    <excluded/>
+    <collapsed/>
+    <classpath>
+      <file absolute="false" name="cs1.jar"/>
+    </classpath>
+    <breakpoints/>
+    <watches/>
+    <bookmarks/>
+    <preferences/>
+  </project>
+</drjava>

@@ -1,0 +1,84 @@
+import java.util.*;
+
+public class IntBag {
+   
+   //properties
+   
+   private int[] bag;
+   int valid = 0;
+   
+   //constructor
+   public IntBag() {
+      bag = new int[100];
+   }
+   
+   public IntBag (int maxNumber ) {
+      bag  = new int [maxNumber];
+   }
+   
+   //methods
+   public void add (int element) {
+      bag[valid] = element;
+      valid++;
+   }
+   
+   //add To method
+   public void addTo (int element, int indexToAdd) {
+      for (int i = valid; i > indexToAdd; i--) {
+         bag[i] = bag[i-1]; 
+      }
+      bag[indexToAdd] = element;
+      valid++;
+   }
+   
+   //remove method
+   public void remove (int element) {
+      for (int i = element+1; i < valid; i++) {
+         bag[i-1] = bag[i];
+      }
+      valid--;
+   }
+   
+   //contains method
+   public boolean contains (int[] bag, int value) {
+      for (int i = 0; i < bag.length; i++) {
+         if (bag[i] == value) {
+            return true;
+         }
+      }
+      return false;
+   }
+   
+   // to String Method
+   public String toString() {
+      String str = "";
+      boolean continueIteration = true;
+      for(int i = 0; i <= bag.length - 1 && continueIteration; i++) {
+         if (get(i) != -1)
+            str = str + bag[i] + " ";
+         else
+            continueIteration = false;
+      }
+      return str;
+   }
+   
+   // Size Method
+   public int size() {
+      int count = 0;
+      boolean continueIteration = true;
+      while (count < bag.length && continueIteration) {
+         if (get(count) != -1) 
+            count++;
+         else
+            continueIteration = false;
+      } 
+      return count;
+   }
+   
+   // get the value at location i within the collection.
+   public int get(int index) {
+      return bag[index];
+   }
+   
+}
+

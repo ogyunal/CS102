@@ -1,0 +1,12 @@
+public class PrimeNumbers {
+  public static void main (String [] args) {
+    IntBag primeNumbers = new IntBag(); //creates a new int bag
+    System.out.println("First 100 Prime numbers are:");
+    primeNumbers.add(2); //adds the first integer to the bag
+    for (int i = 2; i<40; i++){    //computes the remaining fibonacci numbers
+      primeNumbers.add(primeNumbers.get(i-2) + primeNumbers.get(i-1));
+    } 
+    // prints out the content
+    System.out.println(primeNumbers);
+  }
+}

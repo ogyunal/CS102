@@ -1,0 +1,100 @@
+import cs1.SimpleURLReader;
+import java.util.*;
+import java.lang.*;
+
+/**
+ * @author 
+ * @version Lab02.1
+ */ 
+
+public class TestAll
+{
+  public static void showMsg()
+  {
+    
+    System.out.print(  "Welcome to my url reader ");
+    System.out.println();
+  }
+  
+  public static void showMenu()
+  {
+    System.out.println( "(1) Enter the url of poem to add to collection");
+    System.out.println( "(2) List all poems in the collection");
+    System.out.println( "(3) Quit");
+    System.out.println( "Please enter your option: ");
+  }
+  
+  
+  public static void main( String[] args)
+  {
+    // constants
+    
+    // variables
+    ArrayList<MySimpleURLReader> poemList;
+    HTMLFilteredReader htmlReader;
+    MySimpleURLReader txtReader;
+    Scanner scan;
+    int intInput;
+    String stringInput;
+  
+    
+    // program code
+    scan        = new Scanner( System.in);
+    poemList    = new ArrayList<MySimpleURLReader>();
+    showMsg();
+    
+    do
+    {
+      showMenu();
+      intInput = scan.nextInt();
+      
+      if ( intInput == 1)
+      {
+        
+        System.out.println( "Enter the URL of the poem: ");
+        stringInput = scan.next();
+        
+        if ( stringInput.substring( stringInput.length() - 4, stringInput.length() - 1).equals("txt") )
+        {
+          txtReader = new MySimpleURLReader( stringInput );
+          poemList.add( txtReader );
+        }
+        else 
+        {
+          htmlReader = new HTMLFilteredReader( stringInput );
+          poemList.add( htmlReader );
+        }
+      }
+      else if ( intInput == 2 )
+      {
+        
+        do
+        {
+          System.out.println( "Poem list : ");
+          for (int i = 0 ; i < poemList.size() ; i++)
+          {
+            System.out.println( (i + 1) + " => " + ( poemList.get( i)).getName() );
+          }
+          System.out.println( "Select a poem ");
+          System.out.println( "Exit enter " + "\"" + ( poemList.size() + 1 ) + "\"");
+          intInput = scan.nextInt();
+          
+          if ( ( intInput < poemList.size() + 1 ) && ( intInput > 0 ))
+          {
+            System.out.println( ( poemList.get( intInput - 1 ) ).getPageContents());
+          }
+          else if ( !( intInput == poemList.size() + 1 ) )
+          {
+            System.out.println( "Enter a valid number. ");
+            System.out.println();
+          }
+          
+        } while ( !( intInput == poemList.size() + 1 ) );
+        intInput = 0;
+      }
+    }
+    while ( !( intInput == 3 ) );
+    
+    System.out.println( "End." );
+  }
+}

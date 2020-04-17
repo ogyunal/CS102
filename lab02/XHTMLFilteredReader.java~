@@ -1,0 +1,59 @@
+import cs1.SimpleURLReader;
+import java.util.*;
+/*Author = 
+ *Version = Lab02.1
+ */
+public class XHTMLFilteredReader extends HTMLFilteredReader
+{
+   // properities
+   ArrayList<String> arrayList;
+   
+   // constructor
+   public XHTMLFilteredReader( String URL )
+   {
+      super( URL );
+   }
+   
+   // methods
+   //
+   public ArrayList getLinks()
+   {
+      String  content;
+      String  findingHref;
+      String  added;
+      
+      arrayList = new ArrayList<String>();
+      content =   super.getUnfilteredPageContents();
+      findingHref = "";
+      added = "";
+      
+      for (int i = 0 ; i < content.length() - 6 ; i++) //-6 to remove &nbsp
+      {
+         findingHref = "";
+         added  = "";
+         for ( int j = i ; j < i + 5 ; j++)
+         {
+            findingHref = findingHref + content.charAt(j);
+            if ( findingHref.equals( "href="))
+            {
+               for (int k = j + 2 ; !(content.charAt(k) == ('"')) ; k++ )
+               {
+                  added = added + content.charAt(k);
+               }
+               arrayList.add( added );
+               i = i + 5;
+            }
+         }
+      } 
+      return arrayList;
+   }
+   
+   //
+   public double percent()
+   {
+      double i = ( super.getUnfilteredPageContents()).length() ;
+      double j = ( super.getPageContents()).length() ;
+      
+      return 100 * (( i - j) / i);
+   }
+}

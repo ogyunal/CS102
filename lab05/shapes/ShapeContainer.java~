@@ -1,0 +1,94 @@
+package shapes;
+import java.util.*;
+import java.util.Iterator;
+
+public class ShapeContainer implements Iterable
+{
+   
+   //properties.
+   public ArrayList < Shape > allShapes;
+   
+   //constructor
+   public ShapeContainer()
+   {
+      allShapes = new ArrayList< Shape >();
+      
+   }
+   
+   //methods.
+   public void add( Shape inputShape ){
+      allShapes.add( inputShape );
+   }
+   
+   
+   public double getArea()
+   {
+      double sum = 0;
+      
+      for( int i = 0; i < allShapes.size(); i++){
+         sum = sum + ( allShapes.get( i ) ).getArea();
+      }
+      
+      return sum;
+   }
+   
+   
+   public String toString(){
+      String str = "";
+      
+      
+      for( int i = 0; i < allShapes.size(); i++)
+      {
+         str = str + "\n" + ( allShapes.get( i ) ).toString() + "  " + " The area of the shape is: " + 
+            ( allShapes.get( i ) ).getArea();
+      }
+      return str;
+   }
+   
+   public void removeSelectedObjects(){
+      
+      for( int i = 0; i < allShapes.size(); i++)
+      {
+         if( ( (Selectable) allShapes.get( i ) ).getSelected() )
+         {
+            allShapes.remove( i );
+            i--;
+         } 
+      }
+      
+   }
+   
+   public int size()
+   {
+      return allShapes.size();
+   }
+   
+   public int selectAllAt( int x, int y)
+   {
+      int count;
+      count = 0;
+         
+      for( int i = 0; i < allShapes.size(); i++)
+      {
+         if( ( (Selectable) allShapes.get( i ) ).contains(x,y) != null)
+         {
+            count++; 
+            ( (Selectable) allShapes.get( i ) ).setSelected(true);
+            
+         } 
+      }
+      return count;
+   }
+   
+   public Iterator iterator ()
+   {
+      Iterator <Shape> it;
+      it = allShapes.iterator();
+      return it;
+   }
+   
+   
+   
+   
+   
+}

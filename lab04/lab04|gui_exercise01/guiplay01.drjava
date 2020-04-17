@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<drjava version="drjava-20160913-225446">
+  <project autorefresh="false" build="classes/" main="GUIDemo1" root="" work="">
+    <createjar file=""/>
+    <source>
+      <file name="MyDrawingPanel.java" package="" timestamp="01-Apr-2020 09:24:45">
+        <select from="1020" to="1020"/>
+        <scroll column="90" row="0"/>
+      </file>
+      <file name="GUIDemo1.java" package="" timestamp="31-Mar-2020 21:40:26">
+        <select from="1020" to="1020"/>
+        <scroll column="90" row="0"/>
+      </file>
+      <file name="MyFrame.java" package="" timestamp="31-Mar-2020 21:37:39">
+        <select from="1020" to="1020"/>
+        <scroll column="90" row="0"/>
+      </file>
+    </source>
+    <included/>
+    <excluded/>
+    <collapsed/>
+    <classpath/>
+    <breakpoints/>
+    <watches/>
+    <bookmarks/>
+    <preferences/>
+  </project>
+</drjava>
